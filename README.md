@@ -7,7 +7,7 @@ Requires $resource
 
 ## Get Started
 
-    &lt;script src=&quot;dist/angular-ngi18n.js&quot;&gt;&lt;/script&gt;
+    <script src="dist/angular-ngi18n.js"></script>
     ...
     angular.module('yourApp', ['ngI18n'])
     ...
