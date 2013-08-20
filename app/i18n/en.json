@@ -1,0 +1,12 @@
+{
+    "get.started"       : "Get started",
+    "description"       : "Provides internationalization to angularJS projects",
+    "download"          : "Download",
+    "requires"          : "Requires",
+    "configuration"     : "Configuration",
+    "sample"            : "Sample",
+    "choose.language"   : "Choose language",
+    "submit"            : "Submit",
+    "how.old.are.you" : "I am {0} years old",
+    "key.in.i18n.file" : "This is the translation of 'key.in.i18n.file' key"
+}
