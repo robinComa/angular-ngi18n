@@ -13,6 +13,9 @@ Requires $resource
     ...
     .controller('MainCtrl', function ($scope, $i18n) {
 
+## Demo
+
+[Demo](http://robincoma.github.io/angular-ngi18n/)
 
 ## Configuration
 
