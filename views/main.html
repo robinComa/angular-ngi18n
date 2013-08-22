@@ -1,0 +1,152 @@
+<div class="panel panel-success">
+    <div class="panel-heading">
+        {{'get.started' | i18n}}
+    </div>
+    <div class="panel-body">
+        {{'description' | i18n}}.
+
+        <div class="alert alert-danger">{{'requires' | i18n}} $resource</div>
+
+        <code>bower install angular-ngi18n</code>
+        ||
+        <a href="#">{{'download' | i18n}}</a>
+    </div>
+    <div class="panel-footer">
+        <pre>
+&lt;script src=&quot;dist/angular-ngi18n.js&quot;&gt;&lt;/script&gt;
+...
+angular.module('yourApp', ['ngI18n'])
+...
+.controller('MainCtrl', function ($scope, $i18n) {
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        {{'configuration' | i18n}}
+    </div>
+    <div class="panel-footer">
+        <pre>
+(angular-ngi18n.js)
+var config = {
+    files       : 'i18n/:lang.json',    //Ex : 'i18n/en.json'
+    languages   : ['en', 'fr']          //config.languages[0] == default
+};
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        {{'sample' | i18n}}
+    </div>
+    <div class="panel-body">
+        <form ng-submit="submitForm()">
+            <div class="form-group">
+                <label for="exampleSelect">{{'choose.language' | i18n}} :</label>
+                <select id="exampleSelect" ng-model="currentLang" ng-change="changeLanguage()">
+                    <option value="en" selected="selected">English</option>
+                    <option value="fr" selected="selected">Français</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <pre>
+&lt;form ng-submit=&quot;submitForm()&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;exampleSelect&quot;&gt;{ {'choose.language' | i18n} } :&lt;/label&gt;
+        &lt;select id=&quot;exampleSelect&quot; ng-model=&quot;currentLang&quot; ng-change=&quot;changeLanguage()&quot;&gt;
+            &lt;option value=&quot;en&quot; selected=&quot;selected&quot;&gt;English&lt;/option&gt;
+            &lt;option value=&quot;fr&quot; selected=&quot;selected&quot;&gt;Fran&ccedil;ais&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+...
+$scope.currentLang = $i18n.getLanguage();
+
+$scope.changeLanguage = function(){
+    $i18n.changeLanguage(this.currentLang);
+};
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        {{'sample' | i18n}}
+    </div>
+    <div class="panel-body">
+        <i>{{'key.in.i18n.file' | i18n}}</i>
+    </div>
+    <div class="panel-footer">
+        <pre>
+&lt;i&gt;{ {'key.in.i18n.file' | i18n} }&lt;/i&gt;
+
+{
+    ...
+    "key.in.i18n.file" : "This is the translation of 'key.in.i18n.file' key",
+    ...
+}
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        {{'sample' | i18n}}
+    </div>
+    <div class="panel-body">
+        <i>{{'how.old.are.you' | i18n:[26]}}</i>
+    </div>
+    <div class="panel-footer">
+        <pre>
+&lt;i&gt;{ {'how.old.are.you' | i18n:[26]} }&lt;/i&gt;
+
+{
+    ...
+    "how.old.are.you" : "I am {0} years old",
+    ...
+}
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        {{'sample' | i18n}}
+    </div>
+    <div class="panel-body">
+        <form ng-submit="submitForm()">
+            <div class="form-group">
+                <label for="exampleInput">Translate this key :</label>
+                <input type="text" class="form-control" id="exampleInput" ng-model="key" ng-init="key='key.in.i18n.file'">
+                == <strong class="text-info">{{word}}</strong>
+            </div>
+            <button type="submit" class="btn">{{'submit' | i18n}}</button>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <pre>
+&lt;form ng-submit=&quot;submitForm()&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;exampleInput&quot;&gt;Translate this key :&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;exampleInput&quot; ng-model=&quot;key&quot; ng-init=&quot;key='key.in.i18n.file'&quot;&gt;
+        == &lt;strong class=&quot;text-info&quot;&gt;{{word}}&lt;/strong&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;{ {'submit' | i18n} }&quot; class=&quot;btn&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+...
+$scope.submitForm = function(){
+    $scope.word = $i18n.get(this.key);
+};
+...
+{
+    ...
+    "key.in.i18n.file" : "This is the translation of 'key.in.i18n.file' key",
+    ...
+}
+        </pre>
+    </div>
+</div>

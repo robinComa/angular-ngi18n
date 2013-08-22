@@ -1,0 +1,12 @@
+{
+    "get.started"       : "Démarrage",
+    "description"       : "Offre l'internationalisation pour vos projets angularJS",
+    "download"          : "Télecharger",
+    "requires"          : "Nécessite",
+    "configuration"     : "Configuration",
+    "sample"            : "Example",
+    "choose.language"   : "Choisissez votre langue",
+    "submit"            : "Soumettre",
+    "how.old.are.you"   : "J'ai {0} ans",
+    "key.in.i18n.file"  : "Ceci est la traduction de la clef 'key.in.i18n.file'"
+}
